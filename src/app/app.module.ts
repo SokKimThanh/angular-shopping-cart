@@ -15,6 +15,9 @@ import { ShippingComponent } from "./shipping/shipping.component";
 import { CartService } from "./cart.service";
 import { HeroesComponent } from "./heroes/heroes.component";
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroService } from './hero.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -38,9 +41,10 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     CartComponent,
     ShippingComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent
   ],
-  providers: [CartService],
+  providers: [CartService, HeroService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
