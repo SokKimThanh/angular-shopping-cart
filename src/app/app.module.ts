@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms"; // <-- NgModel lives here
 import { HttpModule } from "@angular/http";
+import { AppRoutingModule} from "./app-routing/app-routing.module"
 
 import { AppComponent } from "./app.component";
 import { TopBarComponent } from "./top-bar/top-bar.component";
@@ -18,6 +19,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroService } from './hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -25,12 +27,7 @@ import { MessageService } from './message.service';
     HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: "", component: ProductListComponent },
-      { path: "products/:productId", component: ProductDetailsComponent },
-      { path: "cart", component: CartComponent },
-      { path: "shipping", component: ShippingComponent }
-    ])
+    AppRoutingModule 
   ],
   declarations: [
     AppComponent,
@@ -42,7 +39,8 @@ import { MessageService } from './message.service';
     ShippingComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   providers: [CartService, HeroService, MessageService],
   bootstrap: [AppComponent]
